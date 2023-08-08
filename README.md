@@ -28,6 +28,16 @@ npm install
 npm run dev
 ```
 
+## how do i do this from scratch?
+- create new nextjs project
+- install material ui and mongodb
+- create components
+- create client code to access api in index.js
+- mongodb setup instructions as listed above
+- create lib/mongodb.js to establish connection
+- create the api route for the backend
+- misc: make sure mongodb username and password is correct, cluster name doesn't matter
+
 Open [http://127.0.0.1:3000](http://127.0.0.1:3000) with your browser to see the result.
 **!!! Note: using localhost may cause an error depending on your browser so use 127.0.0.1 instead !!!**
 

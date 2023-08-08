@@ -6,7 +6,11 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function Recipe({ recipe }) {
+export default function Recipe({ recipe, onDelete }) {
+  const deleteRecipe = () => {
+	console.log(recipe.name);
+	onDelete(recipe.name);
+  }
   return (
     <Card className="recipe-container">
       <CardContent>
@@ -15,6 +19,7 @@ export default function Recipe({ recipe }) {
         </Typography>
         <Typography variant="body2">{recipe.ingredients}</Typography>
         <Typography variant="body2">{recipe.method}</Typography>
+        <Button size="small" onClick={deleteRecipe}>Delete</Button>
       </CardContent>
     </Card>
   );

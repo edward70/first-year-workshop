@@ -49,11 +49,27 @@ export default function MyApp() {
     //remove this after backend is set up
     // setRecipes([...recipes, recipe]);
   };
+
+  const deleteRecipe = async (name) => {
+    try {
+      await fetch("http://127.0.0.1:3000/api/deleterecipe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: name,
+      });
+      fetchRecipes();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <Header />
       <div className="app-container">
-        <RecipeLists recipes={recipes} />
+        <RecipeLists recipes={recipes} onDelete={deleteRecipe} />
         <RecipeForm onSubmit={onSubmitRecipe} />
       </div>
     </div>

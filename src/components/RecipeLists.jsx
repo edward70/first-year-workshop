@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Recipe from "./Recipe";
-const RecipeLists = ({ recipes }) => {
+const RecipeLists = ({ recipes, onDelete }) => {
   const exampleRecipes = [
     {
       name: "Pizza",
@@ -24,7 +24,7 @@ const RecipeLists = ({ recipes }) => {
       {recipes.map((recipe) => {
         return (
           <>
-            <Recipe recipe={recipe} />
+            <Recipe recipe={recipe} onDelete={onDelete} />
           </>
         );
       })}
