@@ -19,8 +19,10 @@ export default function Recipe({ recipe, onDelete }) {
         </Typography>
         <Typography variant="body2">{recipe.ingredients}</Typography>
         <Typography variant="body2">{recipe.method}</Typography>
-        <Button size="small" onClick={deleteRecipe}>Delete</Button>
       </CardContent>
+      <CardActions>
+        <Button size="small" onClick={deleteRecipe}>Delete</Button>
+      </CardActions>
     </Card>
   );
 }
