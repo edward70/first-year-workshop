@@ -9,8 +9,9 @@ export default async function handler(req, res) {
   const db = await client.db("recipe-database");
   switch (req.method) {
     case "POST":
-      let bodyObject = JSON.parse(req.body);
-      await db.collection("recipes").insertOne(bodyObject);
+      console.log(req.body);
+      await db.collection("recipes").insertOne(req.body);
+      res.json({status: 200});
       break;
     case "GET":
       const recipes = await db.collection("recipes").find({}).toArray();
