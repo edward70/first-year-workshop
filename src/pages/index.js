@@ -14,7 +14,7 @@ export default function MyApp() {
   //get data from server
   const fetchRecipes = async () => {
     // fetch server from backend
-    const response = await fetch("http://127.0.0.1:5000/get-all");
+    const response = await fetch("http://127.0.0.1:3000/api/recipes");
     const data = await response.json();
 
     //dummy data, remove this after backend is ready
@@ -35,7 +35,7 @@ export default function MyApp() {
   //submit a new recipe
   const onSubmitRecipe = async (recipe) => {
     try {
-      await fetch("http://127.0.0.1:5000/insert-one", {
+      await fetch("http://127.0.0.1:3000/api/recipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
