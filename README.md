@@ -1,6 +1,11 @@
-This is based on the example frontend project for Codebrew 2023 hackathon. Feel free to use this as a template<br>
-Link to the original slides:
+## Credit
+
+This is based on the example frontend project for Codebrew 2023 hackathon by Kevin but extended to include a next.js and mongodb based backend. Feel free to use this as a template<br>
+
+- Link to the original slides:
 https://www.canva.com/design/DAFfsIE6uZM/IpnfMh__IyezI9wwlBI-eg/edit?utm_content=DAFfsIE6uZM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+- Link to original code (no backend):
+https://github.com/Kevin-Zhouu/Codebrew2023-Frontend-workshop
 
 ## Getting Started
 
@@ -9,12 +14,12 @@ https://www.canva.com/design/DAFfsIE6uZM/IpnfMh__IyezI9wwlBI-eg/edit?utm_content
 3. Inside that database, create a collection.
 4. Give the database the name “recipe-database” and the collection the name “recipes”
 5. Copy a connection string from MongoDB Atlas. You can find it under the “Connect Instructions” button of MongoDB Atlas
-The connection string should look like (don't copy this one):
+6. The connection string should look like (don't copy this one):
 ```
-MONGODB_URI= "mongodb+srv://USERNAME:PASSWORD@cluster0.7cpxz.mongodb.net?retryWrites=true&w=majority"
+MONGODB_URI="mongodb+srv://USERNAME:PASSWORD@cluster0.7cpxz.mongodb.net?retryWrites=true&w=majority"
 ```
-6. Create a new file called .env.local in the top level directory of this project and paste the connection string
-7. Remember to change USERNAME and PASSWORD to your actual MongoDB username and password
+7. Create a new file called .env.local in the top level directory of this project and paste the connection string
+8. Remember to change USERNAME and PASSWORD to your actual MongoDB username and password
 
 Then, run the development server:
 
@@ -23,11 +28,12 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000) with your browser to see the result.
+**!!! Note: using localhost may cause an error depending on your browser so use 127.0.0.1 instead !!!**
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/recipes](http://localhost:3000/api/recipes). This endpoint can be edited in `pages/api/recipes.js`.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://127.0.0.1:3000/api/recipes](http://127.0.0.1:3000/api/recipes). This endpoint can be edited in `pages/api/recipes.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
