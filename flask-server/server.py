@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import pymongo
 from flask_cors import CORS
 from bson import json_util
-import json
 
 app = Flask(__name__)
 CORS(app)
@@ -18,7 +17,7 @@ def add_recipe(name, ingredients, method):
 @app.route('/addrecipe', methods=['POST'])
 def api_post_recipe():
     try:
-        add_recipe(request.form.get('name'), request.form.get('ingredients'), request.form.get('method'))
+        add_recipe(request.json.get('name'), request.json.get('ingredients'), request.json.get('method'))
         return jsonify({'Success': "Yay"})
     except Exception as e:
         return jsonify({'error': str(e)}), 400
@@ -27,14 +26,14 @@ def api_post_recipe():
 def api_get_recipe():
     try:
         recipe_data = recipe_collection.find()
-        return json.loads(json_util.dumps(recipe_data))
+        return json_util.dumps(recipe_data)
     except Exception as e:
         return jsonify({'error': str(e)}), 400
     
 @app.route('/deleterecipe', methods=['POST'])
 def api_post_deleterecipe():
     try:
-        recipe_collection.delete_one({'name': request.form.get('name')})
+        recipe_collection.delete_one(request.json)
         return jsonify({'Success': "Yay"})
     except Exception as e:
         return jsonify({'error': str(e)}), 400

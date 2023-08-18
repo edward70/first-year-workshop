@@ -55,9 +55,9 @@ export default function MyApp() {
       await fetch("http://127.0.0.1:8000/deleterecipe", {
         method: "POST",
         headers: {
-          "Content-Type": "text/plain",
+          "Content-Type": "application/json",
         },
-        body: name,
+	body: JSON.stringify({name: name}),
       });
       fetchRecipes();
     } catch (error) {
