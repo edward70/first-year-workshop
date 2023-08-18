@@ -14,7 +14,7 @@ export default function MyApp() {
   //get data from server
   const fetchRecipes = async () => {
     // fetch server from backend
-    const response = await fetch("http://127.0.0.1:3000/api/recipes");
+    const response = await fetch("http://127.0.0.1:8000/listrecipes");
     const data = await response.json();
 
     //dummy data, remove this after backend is ready
@@ -35,7 +35,7 @@ export default function MyApp() {
   //submit a new recipe
   const onSubmitRecipe = async (recipe) => {
     try {
-      await fetch("http://127.0.0.1:3000/api/recipes", {
+      await fetch("http://127.0.0.1:8000/addrecipe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function MyApp() {
 
   const deleteRecipe = async (name) => {
     try {
-      await fetch("http://127.0.0.1:3000/api/deleterecipe", {
+      await fetch("http://127.0.0.1:8000/deleterecipe", {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
