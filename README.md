@@ -19,7 +19,8 @@ https://github.com/Kevin-Zhouu/Codebrew2023-Frontend-workshop
 MONGODB_URI="mongodb+srv://USERNAME:PASSWORD@cluster0.7cpxz.mongodb.net?retryWrites=true&w=majority"
 ```
 7. Create a new file called .env.local in the top level directory of this project and paste the connection string
-8. Remember to change USERNAME and PASSWORD to your actual MongoDB username and password
+8. Change the connection string also in https://github.com/edward70/first-year-workshop/blob/main/flask-server/server.py (don't include the MONGODB_URI part!!)
+9. Remember to change USERNAME and PASSWORD to your actual MongoDB username and password
 
 Then, run the development server:
 
